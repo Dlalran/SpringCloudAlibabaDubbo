@@ -259,4 +259,16 @@ management:
 
 
 
+#### Dubbo Admin
+
+​		由于不再使用Zookeeper作为服务注册中心，因此需要在运行jar包来启动Dubbo控制台时指定运行参数。
+
+- 运行dubbo-admin-server的jar包命令如下
+
+```shell
+java -jar -Dadmin.registry.address=nacos://127.0.0.1:8848 -Dadmin.config-center=nacos://127.0.0.1:8848 -Dadmin.metadata-report.address=nacos://127.0.0.1:8848 dubbo-admin-server-0.1.jar
+```
+
+
+
 ​		*Dubbo还有许多其他功能，如服务降级(Mock)、集群容错、服务分组等，由于这里Dubbo仅作为RPC的实现，因此不予赘述，详细查看Dubbo的Spring Boot Demo项目内容。*

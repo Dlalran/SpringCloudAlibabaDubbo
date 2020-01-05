@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: DubboProvider
+
+dubbo:
+#  扫描Dubbo注解的包，已在主配置类注解中指定
+  #  scan:
+  #    base-packages: priv.howard.dubboprovider.service
+#  使用的RPC通信协议以及端口，端口号可以设置为-1以自动分配，一般默认为20880
+  protocol:
+    name: dubbo
+    port: 20880
+#    使用Kryo作为序列化协议
+    serialization: kryo
+  #    注册中心的地址，使用Nacos代替Zookeeper
+  registry:
+    address: nacos://localhost:8848

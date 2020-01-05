@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>priv.howard</groupId>
+    <artifactId>SpringCloudAlibabaDubbo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+<!--        加入依赖版本控制聚合-->
+        <module>DependenciesManagement</module>
+<!--        其他子模块-->
+        <module>DubboProvider</module>
+        <module>DubboConsumer</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+<!--            通过依赖管理模块统一管理依赖-->
+            <dependency>
+                <groupId>priv.howard</groupId>
+                <artifactId>DependenciesManagement</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
